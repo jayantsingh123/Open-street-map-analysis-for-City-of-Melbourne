@@ -7,6 +7,37 @@ import codecs
 import json
 import audit_street
 
+""" 
+Here, we use the module functionality to access the update function from the python file; audit_street.py.
+
+The output should be a list of dictionaries that look like this:
+
+{
+"id": "2406124091",
+"type: "node",
+"visible":"true",
+"created": {
+          "version":"2",
+          "changeset":"17206049",
+          "timestamp":"2013-08-03T16:43:42Z",
+          "user":"linuxUser16",
+          "uid":"1219059"
+        },
+"pos": [41.9757030, -87.6921867],
+"address": {
+          "housenumber": "5157",
+          "postcode": "60625",
+          "street": "North Lincoln Ave"
+        },
+"amenity": "restaurant",
+"cuisine": "mexican",
+"name": "La Cabana De Don Luis",
+"phone": "1 (773)-271-5176"
+}
+
+"""
+
+
 
 lower = re.compile(r'^([a-z]|_)*$')
 lower_colon = re.compile(r'^([a-z]|_)*:([a-z]|_)*$')
