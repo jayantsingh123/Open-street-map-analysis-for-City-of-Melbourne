@@ -5,8 +5,8 @@ import pprint
 
 
 
-#Here the main goal is to replace the short names of streets, state and city by their respective full names.street_type_re 
-#looks for the string at the end of the street name.
+# Here the main goal is to replace the short names of streets, state and city by their respective full names.street_type_re 
+# searches for the string at the end of the street name.
 
 osm_file="sample_file.osm"
 street_type_re=re.compile(r'\b\S+\.?$',re.IGNORECASE)
