@@ -3,6 +3,10 @@ from collections import defaultdict
 import re
 import pprint
 
+
+
+#Here the main goal is to replace the short names of streets, state and city by their respective full names.
+
 osm_file="sample_file.osm"
 street_type_re=re.compile(r'\b\S+\.?$',re.IGNORECASE)
 #street_type_start=re.compile(r'^\S+\.?\b', re.IGNORECASE)
@@ -26,6 +30,7 @@ mapping = { "St": "Street",
 
 
 def audit_street_type(street_types, street_name):
+  """ We group the street names in a dictionary, the key being the short version of street name, e.g. St. or Rd."""
     m = street_type_re.search(street_name)
     if m:
         street_type = m.group()
@@ -76,6 +81,8 @@ def audit(osmfile):
     return [street_types,state_types,country_types]
 
 def update_street_name(name, mapping):
+    """ the street name update is carried here. Using the mapping dictionary, we replace the shorter version by their full length
+    counterparts"""
 
     name=name.split()
     if name[len(name)-1] in mapping.keys():
